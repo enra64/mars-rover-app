@@ -1,12 +1,15 @@
 package de.arneherdick.thermondorover.mars_rover_api.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
 /**
  * Encapsulates a single mars photo, including the day and sol of capture, its unique ID, and
  * information about the rover that took the pictures and the camera it used for the picture.
  */
+@Parcelize
 data class MarsPhoto(
     /**
      * Unique ID of this photo
@@ -38,4 +41,4 @@ data class MarsPhoto(
      * Information about the rover that took this picture
      */
     val rover: Rover
-)
+) : Parcelable

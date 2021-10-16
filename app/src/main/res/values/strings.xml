@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Thermondo Rover</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="share_this_photo">Share this photo</string>
+    <string name="retry">Retry</string>
+    <string name="camera">%s Camera</string>
+    <string name="list_fragment_title">Mars Rover Photos</string>
+    <string name="detail_photo_title">%s\'s Photo %d</string>
+    <string name="detail_photo_earth_capture">Date of capture: %s</string>
+    <string name="detail_photo_mars_capture">Sol of capture: %s</string>
+    <string name="detail_camera_names">%1$s (%2$s)</string>
+    <string name="rover_dates">The rover launched on %1$s and landed on Mars on %2$s.</string>
+    <string name="rover_name">Rover Name: %s</string>
+    <string name="detail_camera_id">Camera ID: %d</string>
+    <string name="rover_details">Rover Details</string>
+    <string name="camera_details">Camera Details</string>
+    <string name="no_photo_selected">Select a photo to view!</string>
 </resources>

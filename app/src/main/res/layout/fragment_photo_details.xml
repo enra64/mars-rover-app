@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="de.arneherdick.thermondorover.photo_details.data.MarsPhotoDetailViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/no_photo_selected_placeholder"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/no_photo_selected"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            tools:text="Curiosity's Photo 1234" />
+
+        <ScrollView
+            android:id="@+id/photo_details_scrollview"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/photo_card"
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/photo_list_item_vertical_margin">
+
+                    <LinearLayout
+                        android:id="@+id/photo_constraint_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            app:imageUrl="@{viewModel.url}" />
+
+                        <TextView
+                            android:id="@+id/photo_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.format(@string/detail_photo_title, viewModel.rover.name, viewModel.photoId)}"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                            tools:text="Curiosity's Photo 1234" />
+
+                        <TextView
+                            android:id="@+id/photo_capture_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{String.format(@string/detail_photo_earth_capture, viewModel.earthDate)}"
+                            tools:text="Date of capture: 30 May 2015" />
+
+                        <TextView
+                            android:id="@+id/photo_capture_sol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{String.format(@string/detail_photo_mars_capture, viewModel.sol)}"
+                            tools:text="Sol of capture: 1000" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/rover_card"
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/photo_list_item_vertical_margin"
+                    android:elevation="1dp"
+                    app:cardCornerRadius="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/rover_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/rover_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rover_details"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+                        <TextView
+                            android:id="@+id/rover_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{String.format(@string/rover_name, viewModel.rover.name)}"
+                            tools:text="Rover Name: Curiosity" />
+
+                        <TextView
+                            android:id="@+id/rover_dates"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{String.format(@string/rover_dates, viewModel.launchDate, viewModel.landingDate)}"
+                            tools:text="The rover launched on 26 November 2011 and landed on Mars on 6 August 2021" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/camera_card"
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/photo_list_item_vertical_margin"
+                    android:elevation="1dp"
+                    app:cardCornerRadius="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/camera_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/camera_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/camera_details"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+                        <TextView
+                            android:id="@+id/camera_names"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{String.format(@string/detail_camera_names, viewModel.camera.fullName, viewModel.camera.name)}"
+                            tools:text="Navigation Camera (NAVCAM)" />
+
+                        <TextView
+                            android:id="@+id/camera_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{String.format(@string/detail_camera_id, viewModel.camera.id)}"
+                            tools:text="Camera ID: 26" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

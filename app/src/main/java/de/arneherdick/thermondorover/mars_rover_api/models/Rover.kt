@@ -1,11 +1,14 @@
 package de.arneherdick.thermondorover.mars_rover_api.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
 /**
  * Information about a mars rover that took photos.
  */
+@Parcelize
 data class Rover(
     /**
      * Unique ID for this rover
@@ -31,4 +34,4 @@ data class Rover(
      * Status, e.g., "active"
      */
     val status: String
-)
+) : Parcelable

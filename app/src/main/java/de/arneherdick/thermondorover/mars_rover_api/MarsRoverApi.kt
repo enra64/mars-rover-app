@@ -27,7 +27,7 @@ interface MarsRoverApi {
         /**
          * From which sol (i.e., number of mars "days" after landing)
          */
-        @Query("sol") sol: Int = 1,
+        @Query("sol") sol: Int = 1000,
 
         /**
          * API key for NASA
@@ -35,4 +35,3 @@ interface MarsRoverApi {
         @Query("api_key") apiKey: String = "DEMO_KEY"
     ): MarsPhotoResponse
 }
-

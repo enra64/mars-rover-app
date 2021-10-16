@@ -1,10 +1,13 @@
 package de.arneherdick.thermondorover.mars_rover_api.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 /**
  * Information about a single rover camera.
  */
+@Parcelize
 data class RoverCamera(
     /**
      * Unique ID for this camera
@@ -25,4 +28,4 @@ data class RoverCamera(
      * Human-readable version of the camera's name
      */
     @SerializedName("full_name") val fullName: String
-)
+) : Parcelable

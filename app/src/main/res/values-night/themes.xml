@@ -1,16 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ThermondoRover" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.ThermondoRover" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/marsAccent0</item>
+        <item name="colorPrimaryVariant">@color/marsDark0</item>
         <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Additional MDC colors. -->
+        <item name="colorSurface">@color/marsBlack0</item>
+        <item name="colorOnSurface">@color/marsBright1</item>
+        <item name="android:colorBackground">@color/marsBlack0</item>
+        <item name="colorOnBackground">@color/marsBright1</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="toolbarStyle">@style/Widget.ThermondoRover.Toolbar</item>
+    </style>
+
+    <style name="PhotoList">
+        <item name="android:background">@color/marsBlack1</item>
+    </style>
+    <style name="PhotoListItem">
+        <item name="cardBackgroundColor">@color/marsBlack0</item>
+    </style>
+
+    <style name="ThemeOverlay.ThermondoRover.Toolbar" parent="">
+        <item name="colorSurface">@color/marsAccent0</item>
+        <item name="colorOnSurface">@color/white</item>
     </style>
 </resources>

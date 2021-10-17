@@ -2,6 +2,7 @@ package de.arneherdick.thermondorover.photo_details.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -30,9 +31,13 @@ class MarsPhotoDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            val bundleArgs = MarsPhotoDetailFragmentArgs.fromBundle(it)
-            photo = bundleArgs.photo
-            needsUpButton = bundleArgs.needsUpButton
+            try {
+                val bundleArgs = MarsPhotoDetailFragmentArgs.fromBundle(it)
+                photo = bundleArgs.photo
+                needsUpButton = bundleArgs.needsUpButton
+            } catch (e: Exception) {
+                Log.i("PhotoDetails", "Not showing details, photo not given")
+            }
         }
     }
 

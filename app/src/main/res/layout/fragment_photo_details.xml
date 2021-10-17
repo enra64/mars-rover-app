@@ -65,7 +65,8 @@
                             android:layout_marginBottom="8dp"
                             android:adjustViewBounds="true"
                             android:scaleType="centerInside"
-                            app:imageUrl="@{viewModel.url}" />
+                            app:imageUrl="@{viewModel.url}"
+                            android:contentDescription="@string/rover_photo" />
 
                         <TextView
                             android:id="@+id/photo_title"
@@ -130,8 +131,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="@{String.format(@string/rover_dates, viewModel.launchDate, viewModel.landingDate)}"
-                            tools:text="The rover launched on 26 November 2011 and landed on Mars on 6 August 2021" />
+                            android:text="@{String.format(@string/rover_dates_status, viewModel.launchDate, viewModel.landingDate, viewModel.rover.status)}"
+                            tools:text="The rover launched on 26 November 2011 and landed on Mars on 6 August 2021. It is currently active." />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

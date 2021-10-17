@@ -2,7 +2,6 @@ package de.arneherdick.thermondorover.photo_details.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -11,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import de.arneherdick.thermondorover.MarsRoverPhotoActivity
 import de.arneherdick.thermondorover.R
 import de.arneherdick.thermondorover.databinding.FragmentPhotoDetailsBinding
 import de.arneherdick.thermondorover.mars_rover_api.models.MarsPhoto
@@ -18,6 +18,7 @@ import de.arneherdick.thermondorover.photo_details.data.MarsPhotoDetailViewModel
 
 class MarsPhotoDetailFragment : Fragment() {
     private var photo: MarsPhoto? = null
+    private var needsUpButton: Boolean? = null
 
     private var _binding: FragmentPhotoDetailsBinding? = null
 
@@ -29,12 +30,22 @@ class MarsPhotoDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            try {
-                photo = MarsPhotoDetailFragmentArgs.fromBundle(it).photo
-            } catch (e: Exception) {
-                Log.i("MPDF", "Could not get photo from args")
-            }
+            val bundleArgs = MarsPhotoDetailFragmentArgs.fromBundle(it)
+            photo = bundleArgs.photo
+            needsUpButton = bundleArgs.needsUpButton
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        needsUpButton?.let {
+            (activity as MarsRoverPhotoActivity).enableUpButton(it)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        (activity as MarsRoverPhotoActivity).enableUpButton(false)
     }
 
     override fun onCreateView(

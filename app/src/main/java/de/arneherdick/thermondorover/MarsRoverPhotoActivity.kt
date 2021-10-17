@@ -3,16 +3,12 @@ package de.arneherdick.thermondorover
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import dagger.hilt.android.AndroidEntryPoint
 import de.arneherdick.thermondorover.databinding.ActivityMarsRoverPhotosBinding
 
 @AndroidEntryPoint
 class MarsRoverPhotoActivity : AppCompatActivity() {
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -23,6 +19,10 @@ class MarsRoverPhotoActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_item_detail)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        return navController.navigateUp()
+    }
+
+    fun enableUpButton(enable: Boolean) {
+        supportActionBar?.setDisplayHomeAsUpEnabled(enable)
     }
 }

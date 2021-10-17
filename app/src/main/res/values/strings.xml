@@ -9,10 +9,13 @@
     <string name="detail_photo_earth_capture">Date of capture: %s</string>
     <string name="detail_photo_mars_capture">Sol of capture: %s</string>
     <string name="detail_camera_names">%1$s (%2$s)</string>
-    <string name="rover_dates">The rover launched on %1$s and landed on Mars on %2$s.</string>
+    <string name="rover_dates_status">The rover launched on %1$s and landed on Mars on %2$s. It is currently %3$s.</string>
     <string name="rover_name">Rover Name: %s</string>
     <string name="detail_camera_id">Camera ID: %d</string>
     <string name="rover_details">Rover Details</string>
     <string name="camera_details">Camera Details</string>
     <string name="no_photo_selected">Select a photo to view!</string>
+    <string name="no_results">No Results</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="rover_photo">Rover Photo</string>
 </resources>

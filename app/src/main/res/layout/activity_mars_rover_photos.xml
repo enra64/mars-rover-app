@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        style="@style/Widget.ThermondoRover.Toolbar"
+        style="@style/Widget.Rover.Toolbar"
         android:layout_height="?attr/actionBarSize" />
 
 

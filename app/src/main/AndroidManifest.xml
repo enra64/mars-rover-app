@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="de.arneherdick.thermondorover">
+    package="de.arneherdick.rover">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,10 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MarsRoverApplication"
-        android:theme="@style/Theme.ThermondoRover">
+        android:name="de.arneherdick.rover.MarsRoverApplication"
+        android:theme="@style/Theme.Rover">
         <activity
-            android:name=".MarsRoverPhotoActivity"
+            android:name="de.arneherdick.rover.MarsRoverPhotoActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:resizeableActivity="true"

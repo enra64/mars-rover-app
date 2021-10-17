@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Thermondo Rover</string>
+    <string name="app_name">Mars Rover Photos</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="share_this_photo">Share this photo</string>
     <string name="retry">Retry</string>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/photo_list_fragment"
-        android:name="de.arneherdick.thermondorover.photo_list.ui.MarsPhotoListFragment"
+        android:name="de.arneherdick.rover.photo_list.ui.MarsPhotoListFragment"
         android:label="@string/list_fragment_title">
         <action
             android:id="@+id/show_photo_detail"
@@ -15,12 +15,12 @@
     </fragment>
     <fragment
         android:id="@+id/photo_detail_fragment"
-        android:name="de.arneherdick.thermondorover.photo_details.ui.MarsPhotoDetailFragment"
+        android:name="de.arneherdick.rover.photo_details.ui.MarsPhotoDetailFragment"
         android:label="photo_detail"
         tools:layout="@layout/fragment_photo_details">
         <argument
             android:name="photo"
-            app:argType="de.arneherdick.thermondorover.mars_rover_api.models.MarsPhoto" />
+            app:argType="de.arneherdick.rover.mars_rover_api.models.MarsPhoto" />
         <argument
             android:name="needsUpButton"
             app:argType="boolean" />

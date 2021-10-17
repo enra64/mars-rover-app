@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="de.arneherdick.thermondorover.photo_details.data.MarsPhotoDetailViewModel" />
+            type="de.arneherdick.rover.photo_details.data.MarsPhotoDetailViewModel" />
     </data>
 
 

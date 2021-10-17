@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragment_item_detail"
-        android:name="de.arneherdick.thermondorover.photo_details.ui.MarsPhotoDetailFragment"
+        android:name="de.arneherdick.rover.photo_details.ui.MarsPhotoDetailFragment"
         android:label="@string/title_item_detail"
         tools:layout="@layout/fragment_photo_details">
         <argument
             android:name="photo"
-            app:argType="de.arneherdick.thermondorover.mars_rover_api.models.MarsPhoto" />
+            app:argType="de.arneherdick.rover.mars_rover_api.models.MarsPhoto" />
         <argument
             android:name="needsUpButton"
             app:argType="boolean" />

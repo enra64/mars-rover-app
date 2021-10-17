@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable name="viewModel" type="de.arneherdick.thermondorover.photo_list.ui.view_models.MarsPhotoListItemViewModel"/>
+        <variable name="viewModel" type="de.arneherdick.rover.photo_list.ui.view_models.MarsPhotoListItemViewModel"/>
     </data>
 
     <com.google.android.material.card.MaterialCardView

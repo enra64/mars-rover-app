@@ -10,9 +10,16 @@ jobs:
         run: ./gradlew build
 
   test:
-    name: Run unit tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
+
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run ktlint
+        run: bash ./gradlew ktlintFormat --stacktrace

@@ -1,8 +1,12 @@
 package de.arneherdick.thermondorover.photo_list.ui.view_models
 
 import de.arneherdick.thermondorover.getMarsPhoto
-import io.mockk.*
-import org.junit.Assert.*
+import io.mockk.every
+import io.mockk.just
+import io.mockk.mockk
+import io.mockk.runs
+import io.mockk.verify
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MarsPhotoListItemViewModelTest {

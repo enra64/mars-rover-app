@@ -8,9 +8,9 @@ import de.arneherdick.thermondorover.mars_rover_api.models.MarsPhotoResponse
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Test
-import java.util.*
 
 class MarsPhotoPagingSourceTest {
 

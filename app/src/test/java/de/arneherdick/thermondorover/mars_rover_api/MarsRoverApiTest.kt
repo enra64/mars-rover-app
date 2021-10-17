@@ -2,7 +2,8 @@ package de.arneherdick.thermondorover.mars_rover_api
 
 import de.arneherdick.thermondorover.getDate
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Test
 
 class MarsRoverApiTest {

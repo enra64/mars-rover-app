@@ -4,7 +4,7 @@ import de.arneherdick.thermondorover.mars_rover_api.models.MarsPhoto
 import de.arneherdick.thermondorover.mars_rover_api.models.Rover
 import de.arneherdick.thermondorover.mars_rover_api.models.RoverCamera
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 /**
  * Utility function to easily get a default mars photo with some changeable properties.

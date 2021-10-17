@@ -2,9 +2,10 @@ package de.arneherdick.thermondorover.photo_list.ui
 
 import de.arneherdick.thermondorover.getMarsPhoto
 import de.arneherdick.thermondorover.mars_rover_api.models.Rover
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.util.*
+import java.util.Date
 
 class MarsPhotoDiffUtilTest {
     val diffUtil = MarsPhotoDiffUtil()

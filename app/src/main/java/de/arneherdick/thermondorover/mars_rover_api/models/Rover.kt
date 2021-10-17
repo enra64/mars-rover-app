@@ -3,7 +3,7 @@ package de.arneherdick.thermondorover.mars_rover_api.models
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
-import java.util.*
+import java.util.Date
 
 /**
  * Information about a mars rover that took photos.

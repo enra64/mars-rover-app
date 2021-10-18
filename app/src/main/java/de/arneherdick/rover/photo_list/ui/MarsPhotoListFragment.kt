@@ -63,17 +63,13 @@ class MarsPhotoListFragment : Fragment() {
             marsPhotoListViewModel.photos.collect(adapter::submitData)
         }
 
-        // hide refresh indicator & scroll up if refresh loading has finished
+        // listen to loading events to show inProgress/error/success
         viewLifecycleOwner.lifecycleScope.launch {
             adapter.loadStateFlow.collect { loadState ->
                 val isListEmpty = loadState.refresh is LoadState.NotLoading && adapter.itemCount == 0
-                // show empty list
                 binding.noPhotos.isVisible = isListEmpty
-                // Only show the list if refresh succeeds.
                 binding.photoList.isVisible = !isListEmpty
-                // Show loading spinner during initial load or refresh.
                 binding.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
-                // Show the retry state if initial load or refresh fails.
                 binding.retryButton.isVisible = loadState.source.refresh is LoadState.Error
 
                 // Toast on any error
@@ -103,10 +99,12 @@ class MarsPhotoListFragment : Fragment() {
             view?.findViewById(R.id.item_detail_nav_container)
 
         if (detailPaneNavContainer != null) {
+            // show next to list
             detailPaneNavContainer.findNavController().navigate(
                 R.id.fragment_item_detail, MarsPhotoDetailFragmentArgs(photo, false).toBundle()
             )
         } else {
+            // open in new fragment
             requireView().findNavController().navigate(
                 MarsPhotoListFragmentDirections.showPhotoDetail(photo, true)
             )
